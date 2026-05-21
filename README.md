@@ -35,6 +35,31 @@ Numero WhatsApp in `src/config/site.ts` (formato internazionale: `39` + numero).
 | `index.html` | Titolo e meta description |
 | `src/components/Header.tsx` | Nome nel logo |
 
-## Deploy
+## Deploy su Cloudflare Pages
 
-Output in `dist/`. Compatibile con Vercel, Netlify, GitHub Pages (con `base` in `vite.config.ts` se serve sottopath).
+### Opzione A — GitHub (consigliata)
+
+1. Vai su [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
+2. Autorizza GitHub e seleziona il repo **ciacalog92/portfolio-dev**
+3. Impostazioni build:
+
+| Campo | Valore |
+|-------|--------|
+| Production branch | `main` |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Environment variable | `NODE_VERSION` = `20` |
+
+4. Clicca **Save and Deploy**. Ogni push su `main` aggiorna il sito.
+
+URL pubblico: `https://portfolio-dev.pages.dev` (o il nome che scegli). Puoi aggiungere un dominio custom in **Custom domains**.
+
+### Opzione B — CLI Wrangler
+
+```bash
+npm install
+npx wrangler login
+npm run pages:deploy
+```
+
+Il progetto Pages deve chiamarsi `portfolio-dev` (come in `wrangler.toml`).
