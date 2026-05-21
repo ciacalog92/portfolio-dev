@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#0e1520"/>
+  <rect x="1" y="1" width="30" height="30" rx="7" stroke="#3ee8c5" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="6" y="21" font-family="ui-monospace,monospace" font-size="11" font-weight="600" fill="#c792ea">{</text>
+  <text x="14" y="21" font-family="ui-monospace,monospace" font-size="10" font-weight="600" fill="#82aaff">CC</text>
+  <text x="22" y="21" font-family="ui-monospace,monospace" font-size="11" font-weight="600" fill="#ffcb6b">}</text>
+</svg>
