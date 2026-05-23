@@ -11,21 +11,12 @@ type Message = {
 export function ChatBot() {
   const { locale, t } = useLanguage()
   const [open, setOpen] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([])
+  const [messages, setMessages] = useState<Message[]>(() => [
+    { id: 'greeting', role: 'bot', text: t.chatbot.greeting },
+  ])
   const [typing, setTyping] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (open && messages.length === 0) {
-      setMessages([
-        {
-          id: 'greeting',
-          role: 'bot',
-          text: t.chatbot.greeting,
-        },
-      ])
-    }
-  }, [open, messages.length, t.chatbot.greeting])
+  const msgCounter = useRef(0)
 
   useEffect(() => {
     scrollRef.current?.scrollTo({
@@ -38,8 +29,10 @@ export function ChatBot() {
     const item = t.chatbot.questions.find((q) => q.id === id)
     if (!item || typing) return
 
+    msgCounter.current += 1
+    const n = msgCounter.current
     const userMsg: Message = {
-      id: `user-${id}-${Date.now()}`,
+      id: `user-${id}-${n}`,
       role: 'user',
       text: item.q,
     }
@@ -50,7 +43,7 @@ export function ChatBot() {
       setMessages((prev) => [
         ...prev,
         {
-          id: `bot-${id}-${Date.now()}`,
+          id: `bot-${id}-${n}`,
           role: 'bot',
           text: item.a,
         },

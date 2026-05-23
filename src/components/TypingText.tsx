@@ -7,12 +7,18 @@ type TypingTextProps = {
 }
 
 export function TypingText({ text, speed = 42, className = '' }: TypingTextProps) {
+  const [prevKey, setPrevKey] = useState(`${text}|${speed}`)
   const [displayed, setDisplayed] = useState('')
   const [done, setDone] = useState(false)
 
-  useEffect(() => {
+  const currentKey = `${text}|${speed}`
+  if (prevKey !== currentKey) {
+    setPrevKey(currentKey)
     setDisplayed('')
     setDone(false)
+  }
+
+  useEffect(() => {
     let i = 0
     const id = window.setInterval(() => {
       i += 1
