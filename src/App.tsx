@@ -8,22 +8,25 @@ import { Projects } from './components/Projects'
 import { Services } from './components/Services'
 import { FloatingWidgets } from './components/FloatingWidgets'
 import { LanguageProvider } from './context/LanguageContext'
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
   return (
-    <LanguageProvider>
-      <CodeBackground />
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <Projects />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
-      <FloatingWidgets />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <CodeBackground />
+        <Header />
+        <main>
+          <Hero />
+          <Services />
+          <Projects />
+          <About />
+          <Contact />
+        </main>
+        <Footer />
+        <FloatingWidgets />
+      </LanguageProvider>
+    </ThemeProvider>
   )
 }
 

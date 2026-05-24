@@ -20,6 +20,26 @@
   --radius-lg: 14px;
   --container: min(1120px, 92vw);
   --header-h: 72px;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #f5f7fb;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --border: rgba(15, 60, 90, 0.14);
+  --border-hover: rgba(15, 120, 100, 0.45);
+  --text: #0d1b2a;
+  --text-muted: #506277;
+  --accent: #0aa389;
+  --accent-dim: rgba(10, 163, 137, 0.08);
+  --accent-glow: rgba(10, 163, 137, 0.22);
+  --code-kw: #8e3ebd;
+  --code-name: #2659c8;
+  --code-str: #2a8f3a;
+  --code-prop: #c0521a;
+  --code-brace: #b8881a;
+  color-scheme: light;
 }
 
 *,
@@ -427,7 +447,8 @@ p:last-child {
   gap: 0.75rem;
 }
 
-.lang-toggle {
+.lang-toggle,
+.theme-toggle {
   padding: 0.45rem 0.7rem;
   font-family: var(--mono);
   font-size: 0.75rem;
@@ -437,10 +458,19 @@ p:last-child {
   border: 1px solid var(--border);
   border-radius: 8px;
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
 }
 
-.lang-toggle:hover {
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.55rem;
+  line-height: 0;
+}
+
+.lang-toggle:hover,
+.theme-toggle:hover {
   color: var(--accent);
   border-color: var(--accent);
 }
