@@ -1,4 +1,5 @@
 import { About } from './components/About'
+import { BugHunt } from './components/BugHunt'
 import { CodeBackground } from './components/CodeBackground'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
@@ -21,6 +22,7 @@ function App() {
           <Services />
           <Projects />
           <About />
+          <BugHunt />
           <Contact />
         </main>
         <Footer />

@@ -170,6 +170,31 @@ export const translations = {
     whatsapp: {
       label: 'Scrivimi su WhatsApp',
     },
+    game: {
+      comment: 'game',
+      title: 'Bug Hunt',
+      subtitle:
+        'Mini-sfida per developer (e curiosi): trova il bug in ogni snippet prima che scada il tempo. 5 round, punteggio finale.',
+      intro: 'Clicca sulla riga di codice che contiene il bug. Hai 15 secondi per round.',
+      start: 'Avvia sfida',
+      restart: 'Gioca ancora',
+      next: 'Prossimo round',
+      round: 'Round',
+      score: 'Punteggio',
+      time: 'Tempo',
+      correct: 'Bug trovato! +100',
+      wrong: 'Riga sbagliata. -25',
+      timeout: 'Tempo scaduto.',
+      finalTitle: 'Sfida completata',
+      finalScore: 'Punteggio finale',
+      shareCta: 'Hai un progetto in mente? Scrivimi.',
+      ranks: {
+        junior: 'Junior dev',
+        mid: 'Mid dev',
+        senior: 'Senior dev',
+        rockstar: 'Code rockstar',
+      },
+    },
   },
   en: {
     nav: {
@@ -339,6 +364,31 @@ export const translations = {
     },
     whatsapp: {
       label: 'Message me on WhatsApp',
+    },
+    game: {
+      comment: 'game',
+      title: 'Bug Hunt',
+      subtitle:
+        'A quick dev challenge: spot the bug in each snippet before the timer runs out. 5 rounds, final score at the end.',
+      intro: 'Click the line of code that contains the bug. 15 seconds per round.',
+      start: 'Start challenge',
+      restart: 'Play again',
+      next: 'Next round',
+      round: 'Round',
+      score: 'Score',
+      time: 'Time',
+      correct: 'Bug found! +100',
+      wrong: 'Wrong line. -25',
+      timeout: 'Time is up.',
+      finalTitle: 'Challenge complete',
+      finalScore: 'Final score',
+      shareCta: 'Have a project in mind? Get in touch.',
+      ranks: {
+        junior: 'Junior dev',
+        mid: 'Mid dev',
+        senior: 'Senior dev',
+        rockstar: 'Code rockstar',
+      },
     },
   },
 } as const
