@@ -167,31 +167,97 @@ p:last-child {
   opacity: 0.4;
 }
 
-.code-bg__line {
+.code-bg__terminal {
   position: absolute;
+  inset: 0;
+  padding: 2.5rem 4vw;
   font-family: var(--mono);
-  font-size: 0.65rem;
-  color: rgba(62, 232, 197, 0.08);
-  white-space: nowrap;
-  animation: floatLine linear infinite;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: rgba(62, 232, 197, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
   user-select: none;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 18%,
+    black 82%,
+    transparent 100%
+  );
 }
 
-@keyframes floatLine {
-  0% {
+:root[data-theme='light'] .code-bg__terminal {
+  color: rgba(10, 120, 100, 0.22);
+}
+
+.code-bg__row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  white-space: pre;
+  animation: code-bg-rise 0.35s ease-out;
+}
+
+@keyframes code-bg-rise {
+  from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(6px);
   }
-  10% {
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
-  90% {
-    opacity: 1;
+}
+
+.code-bg__prompt {
+  color: rgba(62, 232, 197, 0.35);
+  flex-shrink: 0;
+}
+
+:root[data-theme='light'] .code-bg__prompt {
+  color: rgba(10, 163, 137, 0.45);
+}
+
+.code-bg__text {
+  white-space: pre;
+}
+
+.code-bg__row--active .code-bg__text {
+  color: rgba(62, 232, 197, 0.32);
+}
+
+:root[data-theme='light'] .code-bg__row--active .code-bg__text {
+  color: rgba(10, 120, 100, 0.4);
+}
+
+.code-bg__caret {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  margin-left: 2px;
+  background: var(--accent);
+  opacity: 0.55;
+  animation: code-bg-blink 1s steps(1) infinite;
+  vertical-align: -2px;
+}
+
+@keyframes code-bg-blink {
+  0%, 49% { opacity: 0.55; }
+  50%, 100% { opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .code-bg__terminal {
+    font-size: 0.68rem;
+    padding: 1.5rem 1rem;
   }
-  100% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-bg__terminal { display: none; }
 }
 
 /* ── Code window ── */
