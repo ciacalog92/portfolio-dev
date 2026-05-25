@@ -170,29 +170,100 @@ export const translations = {
     whatsapp: {
       label: 'Scrivimi su WhatsApp',
     },
-    game: {
-      comment: 'game',
-      title: 'Bug Hunt',
+    quiz: {
+      comment: 'quiz',
+      title: 'Qual è la soluzione giusta per te?',
       subtitle:
-        'Mini-sfida per developer (e curiosi): trova il bug in ogni snippet prima che scada il tempo. 5 round, punteggio finale.',
-      intro: 'Clicca sulla riga di codice che contiene il bug. Hai 15 secondi per round.',
-      start: 'Avvia sfida',
-      restart: 'Gioca ancora',
-      next: 'Prossimo round',
-      round: 'Round',
-      score: 'Punteggio',
-      time: 'Tempo',
-      correct: 'Bug trovato! +100',
-      wrong: 'Riga sbagliata. -25',
-      timeout: 'Tempo scaduto.',
-      finalTitle: 'Sfida completata',
-      finalScore: 'Punteggio finale',
-      shareCta: 'Hai un progetto in mente? Scrivimi.',
-      ranks: {
-        junior: 'Junior dev',
-        mid: 'Mid dev',
-        senior: 'Senior dev',
-        rockstar: 'Code rockstar',
+        'Rispondi a 4 domande veloci sulla tua attività: ti suggerisco il progetto più adatto, in meno di un minuto.',
+      intro: 'Pronto? Nessun dato richiesto, solo 4 scelte rapide.',
+      start: 'Inizia il test',
+      restart: 'Rifai il test',
+      next: 'Avanti',
+      back: 'Indietro',
+      progress: 'Domanda',
+      finalEyebrow: 'La soluzione consigliata per te',
+      whyTitle: 'Perché te la consiglio',
+      includesTitle: 'Cosa include',
+      contactCta: 'Parlami del tuo progetto',
+      questions: [
+        {
+          q: 'Qual è la priorità per la tua attività in questo momento?',
+          options: [
+            { label: 'Farmi trovare online e raccontare cosa faccio', tag: 'site' },
+            { label: 'Vendere prodotti o servizi 24/7', tag: 'ecommerce' },
+            { label: 'Ordinare clienti, ordini, magazzino', tag: 'gestionale' },
+            { label: 'Far parlare tra loro gli strumenti che già uso', tag: 'integrations' },
+          ],
+        },
+        {
+          q: 'Oggi come gestisci le informazioni della tua attività?',
+          options: [
+            { label: 'Praticamente a voce, email e carta', tag: 'gestionale' },
+            { label: 'Fogli Excel, WhatsApp, strumenti separati', tag: 'gestionale' },
+            { label: 'Ho un sito ma è vecchio o poco curato', tag: 'site' },
+            { label: 'Ho già dei software ma non comunicano tra loro', tag: 'integrations' },
+          ],
+        },
+        {
+          q: 'Cosa ti farebbe risparmiare più tempo o farebbe crescere di più il fatturato?',
+          options: [
+            { label: 'Un sito professionale che porti contatti', tag: 'site' },
+            { label: 'Un negozio online ben fatto', tag: 'ecommerce' },
+            { label: 'Una dashboard per gestire tutto da un posto solo', tag: 'gestionale' },
+            { label: 'Automatizzare i passaggi ripetitivi', tag: 'integrations' },
+          ],
+        },
+        {
+          q: 'Come preferisci che sia il risultato finale?',
+          options: [
+            { label: 'Bello, veloce e ottimizzato per Google', tag: 'site' },
+            { label: 'Semplice da gestire e pronto a vendere', tag: 'ecommerce' },
+            { label: 'Su misura sui miei processi reali', tag: 'gestionale' },
+            { label: 'Invisibile ma che fa risparmiare ore ogni settimana', tag: 'integrations' },
+          ],
+        },
+      ],
+      results: {
+        site: {
+          title: 'Sito web professionale',
+          why:
+            'La tua priorità è essere trovato, comunicare bene e generare contatti. Un sito veloce, curato e ottimizzato per Google fa esattamente questo.',
+          includes: [
+            'Design su misura e responsive (mobile-first)',
+            'SEO tecnica di base e velocità di caricamento',
+            'Form contatti, analytics e dominio configurato',
+          ],
+        },
+        ecommerce: {
+          title: 'E-commerce su misura',
+          why:
+            'Hai prodotti o servizi da vendere online. Ti serve una vetrina che incassi davvero, semplice da aggiornare e pronta a scalare.',
+          includes: [
+            'Catalogo, carrello e checkout sicuro',
+            'Integrazione pagamenti e spedizioni',
+            'Pannello per gestire ordini e prodotti in autonomia',
+          ],
+        },
+        gestionale: {
+          title: 'Gestionale su misura',
+          why:
+            'Stai usando troppi strumenti scollegati o stai annegando tra fogli Excel. Ti serve un\'unica dashboard cucita sui tuoi processi.',
+          includes: [
+            'Anagrafiche clienti, ordini, magazzino o agenda su misura',
+            'Ruoli e accessi per il team',
+            'Report e statistiche aggiornati in tempo reale',
+          ],
+        },
+        integrations: {
+          title: 'Integrazioni e automazioni',
+          why:
+            'Hai già strumenti che funzionano, ma sprechi tempo a copiare dati. Possiamo farli parlare e automatizzare i passaggi noiosi.',
+          includes: [
+            'Connessione tra gestionale, sito, contabilità, email',
+            'Automazioni custom via API e webhook',
+            'Riduzione errori manuali e ore risparmiate ogni settimana',
+          ],
+        },
       },
     },
   },
@@ -365,29 +436,100 @@ export const translations = {
     whatsapp: {
       label: 'Message me on WhatsApp',
     },
-    game: {
-      comment: 'game',
-      title: 'Bug Hunt',
+    quiz: {
+      comment: 'quiz',
+      title: 'Which solution is right for you?',
       subtitle:
-        'A quick dev challenge: spot the bug in each snippet before the timer runs out. 5 rounds, final score at the end.',
-      intro: 'Click the line of code that contains the bug. 15 seconds per round.',
-      start: 'Start challenge',
-      restart: 'Play again',
-      next: 'Next round',
-      round: 'Round',
-      score: 'Score',
-      time: 'Time',
-      correct: 'Bug found! +100',
-      wrong: 'Wrong line. -25',
-      timeout: 'Time is up.',
-      finalTitle: 'Challenge complete',
-      finalScore: 'Final score',
-      shareCta: 'Have a project in mind? Get in touch.',
-      ranks: {
-        junior: 'Junior dev',
-        mid: 'Mid dev',
-        senior: 'Senior dev',
-        rockstar: 'Code rockstar',
+        'Answer 4 quick questions about your business: I\'ll suggest the best-fit project in under a minute.',
+      intro: 'Ready? No data needed, just 4 quick picks.',
+      start: 'Start the quiz',
+      restart: 'Retake the quiz',
+      next: 'Next',
+      back: 'Back',
+      progress: 'Question',
+      finalEyebrow: 'Your recommended solution',
+      whyTitle: 'Why this fits you',
+      includesTitle: 'What\'s included',
+      contactCta: 'Tell me about your project',
+      questions: [
+        {
+          q: 'What is the top priority for your business right now?',
+          options: [
+            { label: 'Be found online and tell people what I do', tag: 'site' },
+            { label: 'Sell products or services 24/7', tag: 'ecommerce' },
+            { label: 'Organise customers, orders, inventory', tag: 'gestionale' },
+            { label: 'Make the tools I already use talk to each other', tag: 'integrations' },
+          ],
+        },
+        {
+          q: 'How do you handle your business information today?',
+          options: [
+            { label: 'Mostly verbal, email and paper', tag: 'gestionale' },
+            { label: 'Excel sheets, WhatsApp, separate tools', tag: 'gestionale' },
+            { label: 'I have a website but it\'s outdated or rough', tag: 'site' },
+            { label: 'I already have software but they don\'t connect', tag: 'integrations' },
+          ],
+        },
+        {
+          q: 'What would save you the most time or grow revenue fastest?',
+          options: [
+            { label: 'A professional website that brings leads', tag: 'site' },
+            { label: 'A well-built online shop', tag: 'ecommerce' },
+            { label: 'A dashboard to manage everything in one place', tag: 'gestionale' },
+            { label: 'Automating the repetitive steps', tag: 'integrations' },
+          ],
+        },
+        {
+          q: 'What does the ideal end result look like?',
+          options: [
+            { label: 'Beautiful, fast and Google-friendly', tag: 'site' },
+            { label: 'Easy to manage and ready to sell', tag: 'ecommerce' },
+            { label: 'Tailored to my actual processes', tag: 'gestionale' },
+            { label: 'Invisible but saves me hours every week', tag: 'integrations' },
+          ],
+        },
+      ],
+      results: {
+        site: {
+          title: 'Professional website',
+          why:
+            'Your priority is being found, communicating well and getting leads. A fast, polished, SEO-friendly site does exactly that.',
+          includes: [
+            'Custom mobile-first responsive design',
+            'Technical SEO basics and loading speed',
+            'Contact form, analytics, domain set up',
+          ],
+        },
+        ecommerce: {
+          title: 'Custom e-commerce',
+          why:
+            'You have products or services to sell online. You need a storefront that actually converts, easy to update and ready to scale.',
+          includes: [
+            'Catalogue, cart and secure checkout',
+            'Payment and shipping integrations',
+            'Self-service panel for orders and products',
+          ],
+        },
+        gestionale: {
+          title: 'Custom business app',
+          why:
+            'You\'re juggling too many disconnected tools or drowning in spreadsheets. You need a single dashboard built around your processes.',
+          includes: [
+            'Custom customers, orders, inventory or scheduling',
+            'Roles and access controls for the team',
+            'Reports and stats updated in real time',
+          ],
+        },
+        integrations: {
+          title: 'Integrations & automation',
+          why:
+            'You already have tools that work, but you\'re wasting time copying data. We can connect them and automate the boring steps.',
+          includes: [
+            'Connect business app, website, accounting, email',
+            'Custom automations via APIs and webhooks',
+            'Fewer manual errors and hours saved every week',
+          ],
+        },
       },
     },
   },
