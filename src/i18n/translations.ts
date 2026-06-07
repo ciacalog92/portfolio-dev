@@ -170,6 +170,28 @@ export const translations = {
     whatsapp: {
       label: 'Scrivimi su WhatsApp',
     },
+    client: {
+      eyebrow: 'Full-stack web developer',
+      ctaPrimary: 'Iniziamo un progetto',
+      ctaSecondary: 'Guarda i progetti',
+      toDev: 'Vista sviluppatore',
+      toClient: 'Vista cliente',
+      formName: 'Nome',
+      formEmail: 'Email',
+      formMessage: 'Messaggio',
+      formPlaceholder: 'Raccontami obiettivo, tempistiche e budget indicativo…',
+      formSend: 'Invia messaggio',
+      formSent: 'Grazie! Sto aprendo la tua app email…',
+      emailLabel: 'Oppure scrivimi a',
+      mock: {
+        label: 'gestionale-b2b.app',
+        kpis: [
+          { value: '+38%', label: 'Ordini' },
+          { value: '−24%', label: 'Tempi' },
+          { value: '1.2k', label: 'Utenti' },
+        ],
+      },
+    },
   },
   en: {
     nav: {
@@ -339,6 +361,28 @@ export const translations = {
     },
     whatsapp: {
       label: 'Message me on WhatsApp',
+    },
+    client: {
+      eyebrow: 'Full-stack web developer',
+      ctaPrimary: "Let's start a project",
+      ctaSecondary: 'View projects',
+      toDev: 'Developer view',
+      toClient: 'Client view',
+      formName: 'Name',
+      formEmail: 'Email',
+      formMessage: 'Message',
+      formPlaceholder: 'Tell me your goal, timeline and indicative budget…',
+      formSend: 'Send message',
+      formSent: 'Thanks! Opening your email app…',
+      emailLabel: 'Or email me at',
+      mock: {
+        label: 'b2b-management.app',
+        kpis: [
+          { value: '+38%', label: 'Orders' },
+          { value: '−24%', label: 'Lead time' },
+          { value: '1.2k', label: 'Users' },
+        ],
+      },
     },
   },
 } as const

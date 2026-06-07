@@ -17,6 +17,15 @@
     <title>Calogero Ciaccio — Sviluppatore Web</title>
   </head>
   <body>
+    <script>
+      // Set the saved view mode before paint to avoid a theme flash.
+      try {
+        var m = localStorage.getItem('portfolio-view-mode')
+        document.body.dataset.mode = m === 'developer' ? 'developer' : 'client'
+      } catch (e) {
+        document.body.dataset.mode = 'client'
+      }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

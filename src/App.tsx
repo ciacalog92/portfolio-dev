@@ -1,29 +1,24 @@
-import { About } from './components/About'
-import { CodeBackground } from './components/CodeBackground'
-import { Contact } from './components/Contact'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { Projects } from './components/Projects'
-import { Services } from './components/Services'
-import { FloatingWidgets } from './components/FloatingWidgets'
+import { ClientSite } from './components/client/ClientSite'
+import { DeveloperSite } from './components/DeveloperSite'
+import { ModeSwitch } from './components/ModeSwitch'
+import { ModeTransition } from './components/ModeTransition'
 import { LanguageProvider } from './context/LanguageContext'
+import { ViewModeProvider, useViewMode } from './context/ViewModeContext'
+
+function Site() {
+  const { mode } = useViewMode()
+  return mode === 'developer' ? <DeveloperSite /> : <ClientSite />
+}
 
 function App() {
   return (
-    <LanguageProvider>
-      <CodeBackground />
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <Projects />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
-      <FloatingWidgets />
-    </LanguageProvider>
+    <ViewModeProvider>
+      <LanguageProvider>
+        <Site />
+        <ModeSwitch />
+        <ModeTransition />
+      </LanguageProvider>
+    </ViewModeProvider>
   )
 }
 
