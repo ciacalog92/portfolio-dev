@@ -7,6 +7,8 @@ compatibility_date = "2026-05-22"
 command = "npm run build"
 
 # Static-assets-only Worker: `wrangler deploy` uploads the built Vite output.
-# SPA fallback is handled by dist/_redirects (/* -> /index.html 200).
+# Unknown paths fall back to index.html via native SPA handling (Workers
+# Assets rejects a `/* -> /index.html 200` _redirects rule as a loop).
 [assets]
 directory = "./dist"
+not_found_handling = "single-page-application"
