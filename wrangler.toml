@@ -1,6 +1,11 @@
 name = "portfolio-dev"
 compatibility_date = "2026-05-22"
 
+# Build the Vite output before every `wrangler deploy` (so dist/ always exists,
+# even when the platform runs the deploy command without a separate build step).
+[build]
+command = "npm run build"
+
 # Static-assets-only Worker: `wrangler deploy` uploads the built Vite output.
 # SPA fallback is handled by dist/_redirects (/* -> /index.html 200).
 [assets]
