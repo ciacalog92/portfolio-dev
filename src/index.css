@@ -1429,6 +1429,13 @@ body[data-mode='client'] {
   color: var(--c-text);
 }
 
+/* Apply the same theme whenever a client-site view is in the DOM, so the page
+   stays readable even if the inline body[data-mode] script didn't run. */
+body:has(.client-site) {
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+
 .client-site {
   position: relative;
 }
