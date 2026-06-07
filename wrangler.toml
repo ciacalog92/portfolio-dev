@@ -1,3 +1,7 @@
 name = "portfolio-dev"
 compatibility_date = "2026-05-22"
-pages_build_output_dir = "dist"
+
+# Static-assets-only Worker: `wrangler deploy` uploads the built Vite output.
+# SPA fallback is handled by dist/_redirects (/* -> /index.html 200).
+[assets]
+directory = "./dist"

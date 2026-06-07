@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "pages:deploy": "npm run build && wrangler pages deploy dist --project-name=portfolio-dev",
-    "pages:dev": "npm run build && wrangler pages dev dist"
+    "deploy": "npm run build && wrangler deploy",
+    "cf:dev": "npm run build && wrangler dev"
   },
   "dependencies": {
     "react": "^19.2.6",
